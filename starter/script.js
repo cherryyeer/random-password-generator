@@ -90,21 +90,31 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 function getPasswordOptions() {
-  var length = prompt("Enter a number to choose the length of your password: (At least 10 characters but no more than 64)")
-  console.log(length)
 
-  var typesLowercase = prompt("Enter Yes or No to choose if your password includes the following character types: 1. Lowercase")
-  console.log(typesLowercase)
-
-  var typesUppercase = prompt("2. Numeric")
-  console.log(typesUppercase)
-
-  var typesSpecial = prompt("3.Special characters")
-  console.log(typesSpecial)
 }
 getPasswordOptions()
 // Function for getting a random element from an array
 function getRandom(arr) {
+
+}
+
+// Function to generate password with user input
+function generatePassword() {
+  var length = prompt("Enter a number to choose the length of your password: (At least 10 characters but no more than 64)")
+  console.log(length)
+
+  var typesLowercase = confirm("Choose ok to confirm if your password includes the following character types: 1. Lowercase")
+  console.log(typesLowercase)
+
+  var typesUppercase = confirm("2. Numeric")
+  console.log(typesUppercase)
+
+  var typesSpecial = confirm("3.Special characters")
+  console.log(typesSpecial)
+
+  var specialAndNumeric = specialCharacters.concat(numericCharacters)
+  console.log(specialAndNumeric)
+  
   if (typesLowercase == "Yes") {
 
   }
@@ -116,11 +126,6 @@ function getRandom(arr) {
   if (typesSpecial == "Yes") {
     
   }
-}
-
-// Function to generate password with user input
-function generatePassword() {
-
 }
 
 // Get references to the #generate element
