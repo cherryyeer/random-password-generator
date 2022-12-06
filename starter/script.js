@@ -88,6 +88,38 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+/*
+var lowercaseletter = ["a","b","c"];
+var uppercaseletter = ["a","b","c"];
+
+var allLetters = lowercaseletter.concat(uppercaseLetter);
+
+var index = Math.floor(Math.random() * lowercaseletter.length);
+
+console.log(lowercaseletter[index]);
+
+var characters = [];
+
+characters = characters.concat(lowercaseletter);
+characters = characters.concat(uppercaseletter);
+characters = characters.concat(numbers);
+
+var password = "";
+for (var i = 0; i < length - 3 ; i++) {
+  var randomIndex = Math.floor(Math.random() * characters.length);
+  var randomCharacter = characters[randomIndex];
+  password = password + randomcharacter;
+  console.log(password);
+}
+*/
+
+var randonIndex = Math.floor(Math.random() * specialCharacters.length);
+var singleSpecislCharacter = specialCharacters[randonIndex]
+console.log(singleSpecislCharacter)
+
+
+var password = "";
+
 // Function to prompt user for password options
 function getPasswordOptions() {
 
@@ -103,13 +135,13 @@ function generatePassword() {
   var length = prompt("Enter a number to choose the length of your password: (At least 10 characters but no more than 64)")
   console.log(length)
 
-  var typesLowercase = confirm("Choose ok to confirm if your password includes the following character types: 1. Lowercase")
+  var typesLowercase = confirm("Choose ok to confirm if your password includes Lowercase")
   console.log(typesLowercase)
 
-  var typesUppercase = confirm("2. Numeric")
+  var typesUppercase = confirm("Choose ok to confirm if your password includes Numeric")
   console.log(typesUppercase)
 
-  var typesSpecial = confirm("3.Special characters")
+  var typesSpecial = confirm("Choose ok to confirm if your password includes Special characters")
   console.log(typesSpecial)
 
   var specialAndNumeric = specialCharacters.concat(numericCharacters)
