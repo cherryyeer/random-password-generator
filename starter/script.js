@@ -113,50 +113,52 @@ for (var i = 0; i < length - 3 ; i++) {
 }
 */
 
-var randonIndex = Math.floor(Math.random() * specialCharacters.length);
-var singleSpecislCharacter = specialCharacters[randonIndex]
-console.log(singleSpecislCharacter)
-
-
-var password = "";
-
 // Function to prompt user for password options
 function getPasswordOptions() {
+  length = prompt("Enter a number to choose the length of your password: (At least 10 characters but no more than 64)")
 
+  typesSpecial = confirm("Choose ok to confirm if your password includes Special characters")
+
+  typesNumeric = confirm("Choose ok to confirm if your password includes Numbers")
+
+  typesLowercase = confirm("Choose ok to confirm if your password includes Lowercase")
+
+  typesUppercase = confirm("Choose ok to confirm if your password includes Uppercase")
+
+  mixedArr = []
+  
+  if (typesSpecial === true) {
+    mixedArr = mixedArr.concat(specialCharacters)
+  }
+
+  if (typesLowercase === true) {
+    mixedArr = mixedArr.concat(lowerCasedCharacters)
+  }
+
+  if (typesUppercase === true) {
+    mixedArr = mixedArr.concat(upperCasedCharacters)
+  }
 }
-getPasswordOptions()
+
 // Function for getting a random element from an array
 function getRandom(arr) {
+  singleSpecial = specialCharacters[Math.floor(Math.random() * specialCharacters.length)]
 
+  singleNumeric = numericCharacters[Math.floor(Math.random() * numericCharacters.length)]
+
+  singleLower = lowerCasedCharacters[Math.floor(Math.random() * lowerCasedCharacters.length)]
+
+  singleUpper = upperCasedCharacters[Math.floor(Math.random() * upperCasedCharacters.length)]
 }
 
 // Function to generate password with user input
 function generatePassword() {
-  var length = prompt("Enter a number to choose the length of your password: (At least 10 characters but no more than 64)")
-  console.log(length)
+  password = "";
 
-  var typesLowercase = confirm("Choose ok to confirm if your password includes Lowercase")
-  console.log(typesLowercase)
-
-  var typesUppercase = confirm("Choose ok to confirm if your password includes Numeric")
-  console.log(typesUppercase)
-
-  var typesSpecial = confirm("Choose ok to confirm if your password includes Special characters")
-  console.log(typesSpecial)
-
-  var specialAndNumeric = specialCharacters.concat(numericCharacters)
-  console.log(specialAndNumeric)
-  
-  if (typesLowercase == "Yes") {
-
-  }
-
-  if (typesUppercase == "Yes") {
-    
-  }
-
-  if (typesSpecial == "Yes") {
-    
+  for (var i=0; i<length - 3 ; i++) {
+    var randomIndex = Math.floor(Math.random() * mixedArr.length);
+    var randomCharacter = mixedArr[randomIndex];
+    password = password + randomcharacter + singleSpecial + singleNumeric + singleLower + singleUpper;
   }
 }
 
